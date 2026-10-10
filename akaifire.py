@@ -391,10 +391,10 @@ class AkaiFireMidiMapper:
         if self.fireOut is None:
             return
 
-        self.virtualIn = mido.open_input(virtualPortName, virtual=True, callback=self.messageCallbackVirtual)
+        self.virtualIn = mido.open_input(virtualPortName, virtual=False, callback=self.messageCallbackVirtual)
         if self.virtualIn is None:
             return
-        self.virtualOut = mido.open_output(virtualPortName, virtual=True)
+        self.virtualOut = mido.open_output(virtualPortName, virtual=False)
         if self.virtualOut is None:
             return
 
